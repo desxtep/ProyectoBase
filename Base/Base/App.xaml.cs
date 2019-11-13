@@ -4,15 +4,19 @@ using Xamarin.Forms.Xaml;
 
 namespace Base
 {
+    using Views;
     public partial class App : Application
     {
+        #region Contructors
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            this.MainPage = new LoginPage();
         }
+        #endregion
 
+        #region Methods
         protected override void OnStart()
         {
             // Handle when your app starts
@@ -26,6 +30,7 @@ namespace Base
         protected override void OnResume()
         {
             // Handle when your app resumes
-        }
+        } 
+        #endregion
     }
 }
