@@ -5,20 +5,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              mc:Ignorable="d"
+             Title="Wushu"
              x:Class="Base.Views.LoginPage">
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout Padding="10,0,10,0">
-            <Label Text="Wushu"
-                FontAttributes="Bold"
-                   FontSize="Large"
-                HorizontalOptions="Center" />
+        <StackLayout Padding="5">
+           
             <Image 
                 Source="icono"
                 WidthRequest="150"
                 ></Image>
             <Grid 
-                Margin="0,0">
+                Margin="10.0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -53,32 +51,44 @@
                 >
                 </Entry>
             </Grid>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Remember in this device"
+                <ActivityIndicator>
+                </ActivityIndicator>
+                <StackLayout Orientation="Horizontal"
+                         Margin="10,0">
+                    <Label Text="Remember on this device"
                        VerticalOptions="Center"
                        HorizontalOptions="StartAndExpand">
-                </Label>
+                    </Label>
 
-                <Switch HorizontalOptions="End"></Switch>
-            </StackLayout>
-          
-           
-            <ActivityIndicator>
-                
-            </ActivityIndicator>
-            <StackLayout Margin="30,0">
+                    <Switch HorizontalOptions="End"></Switch>
+                </StackLayout>
+
+                <Label  
+                    Text="Forgot your Psssword?:"
+                    HorizontalOptions="Center"
+                    TextColor="Blue" 
+                    > 
+                </Label>
+                <StackLayout 
+                    Margin="30,0"
+                    Orientation="Horizontal"
+                             
+                    >
                 <Button
                 BackgroundColor="Navy"
                 Text="Login"
                 TextColor="White"
-                BorderRadius="23">
+                BorderRadius="23"
+                    HorizontalOptions="FillAndExpand">
 
                 </Button>
                 <Button
-                BackgroundColor="Navy"
+           
                 Text="Register"
                 TextColor="White"
-                BorderRadius="23">
+                BorderRadius="23"
+                    BackgroundColor="Purple"
+                    HorizontalOptions="FillAndExpand">
 
                 </Button>
                 
