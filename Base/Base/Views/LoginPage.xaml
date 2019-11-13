@@ -5,17 +5,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              mc:Ignorable="d"
+             BackgroundColor="White"
+             
              Title="Wushu"
              x:Class="Base.Views.LoginPage">
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout Padding="5">
+        <StackLayout Padding="0">
            
             <Image 
+                 VerticalOptions="StartAndExpand"
                 Source="icono"
-                WidthRequest="150"
+                WidthRequest="140"
                 ></Image>
             <Grid 
+                VerticalOptions="FillAndExpand"
                 Margin="10.0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -51,10 +55,14 @@
                 >
                 </Entry>
             </Grid>
-                <ActivityIndicator>
+                <ActivityIndicator
+                    VerticalOptions="FillAndExpand">
+                    
                 </ActivityIndicator>
-                <StackLayout Orientation="Horizontal"
-                         Margin="10,0">
+                <StackLayout
+                    Orientation="Horizontal"
+                    Margin="10,0"
+                    VerticalOptions="FillAndExpand">
                     <Label Text="Remember on this device"
                        VerticalOptions="Center"
                        HorizontalOptions="StartAndExpand">
@@ -64,6 +72,7 @@
                 </StackLayout>
 
                 <Label  
+                    VerticalOptions="FillAndExpand"
                     Text="Forgot your Psssword?:"
                     HorizontalOptions="Center"
                     TextColor="Blue" 
@@ -72,7 +81,7 @@
                 <StackLayout 
                     Margin="30,0"
                     Orientation="Horizontal"
-                             
+                    VerticalOptions="FillAndExpand"             
                     >
                 <Button
                 BackgroundColor="Navy"
@@ -92,10 +101,11 @@
 
                 </Button>
                 
-            </StackLayout>
+                </StackLayout>
             <StackLayout 
                 Orientation="Horizontal"    
                 HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
                 >
                 <Image 
                     Source="face"
