@@ -10,7 +10,8 @@
              Title="Wushu"
              x:Class="Base.Views.LoginPage">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView
+            BindingContext="{Binding Login}}">
         <StackLayout Padding="0">
            
             <Image 
@@ -36,7 +37,8 @@
                     Grid.Row="0"
                     Grid.Column="1"
                     Keyboard="Email"
-                    Placeholder="Enter your email"
+                    Text="{Binding Emal, Mode=TwoWay}"
+                    Placeholder="Enter your email.."
                 >
                 </Entry>
                 <Label
@@ -51,11 +53,13 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     IsPassword="True"
+                    Text="{Binding Password, Mode=TwoWay}"
                     Placeholder="Enter your password"
                 >
                 </Entry>
             </Grid>
                 <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
                     VerticalOptions="FillAndExpand">
                     
                 </ActivityIndicator>
@@ -68,7 +72,10 @@
                        HorizontalOptions="StartAndExpand">
                     </Label>
 
-                    <Switch HorizontalOptions="End"></Switch>
+                    <Switch 
+                        HorizontalOptions="End"
+                        IsToggled="{Binding IsRemembered, Mode=TwoWay}"    
+                        ></Switch>
                 </StackLayout>
 
                 <Label  
@@ -88,7 +95,8 @@
                 Text="Login"
                 TextColor="White"
                 BorderRadius="23"
-                    HorizontalOptions="FillAndExpand">
+                    HorizontalOptions="FillAndExpand"
+                    Command="{Binding LoginCommand, Mode=TwoWay}">
 
                 </Button>
                 <Button
