@@ -11,44 +11,44 @@
              x:Class="Base.Views.LoginPage">
     <ContentPage.Content>
         <ScrollView
-            BindingContext="{Binding Login}}">
-        <StackLayout Padding="0">
-           
-            <Image 
+            BindingContext="{Binding Login}">
+            <StackLayout Padding="0">
+
+                <Image 
                  VerticalOptions="StartAndExpand"
                 Source="icono"
                 WidthRequest="140"
                 ></Image>
-            <Grid 
+                <Grid 
                 VerticalOptions="FillAndExpand"
                 Margin="10.0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="2*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Label
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label
                     Grid.Row="0"
                     Grid.Column="0"
                     Text="E-mail:"
                     VerticalOptions="Center"
                 >
-                </Label>
-                <Entry
+                    </Label>
+                    <Entry
                     Grid.Row="0"
                     Grid.Column="1"
                     Keyboard="Email"
-                    Text="{Binding Emal, Mode=TwoWay}"
+                    Text="{Binding Email, Mode=TwoWay}"
                     Placeholder="Enter your email.."
                 >
-                </Entry>
-                <Label
+                    </Entry>
+                    <Label
                     Grid.Row="1"
                     Grid.Column="0"
                     Text="Password:"
                     VerticalOptions="Center"
                 >
-                </Label>
-                <Entry
+                    </Label>
+                    <Entry
                     
                     Grid.Row="1"
                     Grid.Column="1"
@@ -56,12 +56,12 @@
                     Text="{Binding Password, Mode=TwoWay}"
                     Placeholder="Enter your password"
                 >
-                </Entry>
-            </Grid>
+                    </Entry>
+                </Grid>
                 <ActivityIndicator
                     IsRunning="{Binding IsRunning, Mode=TwoWay}"
                     VerticalOptions="FillAndExpand">
-                    
+
                 </ActivityIndicator>
                 <StackLayout
                     Orientation="Horizontal"
@@ -83,53 +83,55 @@
                     Text="Forgot your Psssword?:"
                     HorizontalOptions="Center"
                     TextColor="Blue" 
-                    > 
+                    >
                 </Label>
                 <StackLayout 
                     Margin="30,0"
                     Orientation="Horizontal"
                     VerticalOptions="FillAndExpand"             
                     >
-                <Button
-                BackgroundColor="Navy"
-                Text="Login"
-                TextColor="White"
-                BorderRadius="23"
+                    <Button
+                    BackgroundColor="Navy"
+                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"    
+                    Text="Login"
+                    TextColor="White"
+                    BorderRadius="23"
                     HorizontalOptions="FillAndExpand"
                     Command="{Binding LoginCommand, Mode=TwoWay}">
 
-                </Button>
-                <Button
+                    </Button>
+                    <Button
            
-                Text="Register"
-                TextColor="White"
-                BorderRadius="23"
+                    Text="Register"
+                    TextColor="White"
+                    BorderRadius="23"
                     BackgroundColor="Purple"
-                    HorizontalOptions="FillAndExpand">
+                    HorizontalOptions="FillAndExpand"
+                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}" >
 
-                </Button>
-                
+                    </Button>
+
                 </StackLayout>
-            <StackLayout 
+                <StackLayout 
                 Orientation="Horizontal"    
                 HorizontalOptions="Center"
                 VerticalOptions="EndAndExpand"
                 >
-                <Image 
+                    <Image 
                     Source="face"
                     WidthRequest="100"
                 ></Image>
-                <Image 
+                    <Image 
                     Source="twiter"
                     WidthRequest="100"
                 ></Image>
-                <Image 
+                    <Image 
                     Source="instagram"
                     WidthRequest="100"
                 ></Image>
+                </StackLayout>
+
             </StackLayout>
-        
-        </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
