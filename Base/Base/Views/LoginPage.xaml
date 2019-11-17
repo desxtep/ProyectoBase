@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              BackgroundColor="White"
              
-             Title="Wushu"
+             Title="Login"
              x:Class="Base.Views.LoginPage">
     <ContentPage.Content>
         <ScrollView

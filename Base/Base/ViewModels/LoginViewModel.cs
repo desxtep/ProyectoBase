@@ -2,6 +2,7 @@
 
 namespace Base.ViewModels
 {
+    using Base.Views;
     using GalaSoft.MvvmLight.Command;
     using System;
     using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace Base.ViewModels
         #endregion
 
         #region Attributes
+        private string email;
         private string password;
         private bool isRunning;
         private bool isEnable;
@@ -23,8 +25,8 @@ namespace Base.ViewModels
         #region Properties
         public String Email
         {
-            get;
-            set;
+            get { return email; }
+            set { SetValue(ref email, value); }
         }
 
         public String Password
@@ -105,15 +107,25 @@ namespace Base.ViewModels
 
             this.IsRunning = false;
             this.IsEnabled = true;
+
+            this.Email = String.Empty;
+            this.Password = String.Empty;
+
+
+            MainViewModel.GetInstance().Bases = new BasesViewModel(); 
+            await Application.Current.MainPage.Navigation.PushAsync(new BasesPage());
         }
-
-
         #endregion
 
         #region Contructors
         public LoginViewModel()
         {
             this.IsRemembered = true;
+            this.IsEnabled = true;
+            this.Email = "m";
+            this.Password="asdf";
+
+            // http://restcountries.eu/rest/v2/all
         }
         #endregion
     }
